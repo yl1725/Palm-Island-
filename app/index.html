@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0e4d3a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="棕榈岛">
+  <title>棕榈岛</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <div class="brand">🌴 <span>棕榈岛</span></div>
+      <div id="roundInfo" class="pill">轮次 1/8</div>
+      <div id="scoreInfo" class="pill">★ 0</div>
+      <div class="spacer"></div>
+      <button id="undoBtn" class="icon-btn" title="撤销" aria-label="撤销">↩</button>
+      <button id="menuBtn" class="icon-btn" title="菜单" aria-label="菜单">☰</button>
+    </header>
+
+    <main id="playArea">
+      <div id="deckArea">
+        <div id="slot2" class="card-slot slot-peek"></div>
+        <div id="slot1" class="card-slot slot-second"></div>
+        <div id="slot0" class="card-slot slot-first"></div>
+        <div id="peekHint" class="peek-hint hidden">可查看前两张牌的背面</div>
+      </div>
+
+      <section id="storedZone">
+        <div class="zone-label"><span>储存资源</span><span id="storedCount">0 / 4</span></div>
+        <div id="storedArea" class="stored-row"></div>
+        <div id="bonusArea" class="bonus-line hidden"></div>
+      </section>
+    </main>
+
+    <footer id="actionBar">
+      <button id="actStore" class="act-btn act-store" disabled>储存</button>
+      <button id="actRotate" class="act-btn act-rotate" disabled>旋转</button>
+      <button id="actFlip" class="act-btn act-flip" disabled>翻面</button>
+      <button id="actDiscard" class="act-btn act-discard" disabled>弃牌</button>
+      <button id="peekBtn" class="act-btn act-peek" disabled>背面</button>
+      <button id="actFeat" class="act-btn act-feat hidden" disabled>天赋</button>
+    </footer>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data/cards.js"></script>
+  <script src="js/data/feats.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
