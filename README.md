@@ -9,7 +9,6 @@
 ## 本地运行
 
 ```bash
-cd app
 python3 -m http.server 8080
 ```
 
@@ -17,12 +16,11 @@ python3 -m http.server 8080
 
 ## 上线托管
 
-`app/` 是完整静态站点，可直接部署到任意静态托管：
+仓库根目录就是完整静态站点，可直接部署到任意静态托管：
 
 ### GitHub Pages（推荐）
 
 ```bash
-cd app
 git init
 git add .
 git commit -m "棕榈岛网页版"
@@ -31,28 +29,28 @@ git remote add origin git@github.com:<你的用户名>/<仓库名>.git
 git push -u origin main
 ```
 
-仓库设置 → Pages → 分支 `main` / 根目录 → 保存，即可访问
+仓库设置 → Pages → 分支 `main` / `/(root)` → 保存，即可访问
 `https://<你的用户名>.github.io/<仓库名>/`。
 
 ### Vercel
 
 ```bash
 npm i -g vercel
-cd app && vercel --prod
+vercel --prod
 ```
 
 ### Netlify
 
 ```bash
 npm i -g netlify-cli
-cd app && netlify deploy --prod --dir=.
+netlify deploy --prod --dir=.
 ```
 
 ## 数据说明
 
 卡牌与天赋的具体数值为初稿（`verified: false`），数据文件：
 
-- `app/js/data/cards.js`
-- `app/js/data/feats.js`
+- `js/data/cards.js`
+- `js/data/feats.js`
 
 拿到官方数值后只需修改上述文件。
